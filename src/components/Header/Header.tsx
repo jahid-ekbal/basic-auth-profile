@@ -1,3 +1,4 @@
+import { FingerprintPatternIcon } from "lucide-react";
 import Link from "next/link";
 import ThemeToggleButton from "../Buttons/ThemeToggleButton";
 
@@ -8,11 +9,11 @@ const Header = () => {
       aria-label="app-header">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link href={"/"}>
-          <h1
-            className="text-2xl font-semibold"
+          <div
+            className="flex items-center gap-2 text-lg font-bold"
             aria-label="App Name">
-            AUTH Profile
-          </h1>
+            <FingerprintPatternIcon /> Basic Auth Profile
+          </div>
         </Link>
 
         <nav className="flex items-center gap-4">
