@@ -25,6 +25,17 @@ const RegisterFormCard = () => {
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
+                <Label htmlFor="full name">Full Name</Label>
+                <Input
+                  id="full name"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -33,6 +44,7 @@ const RegisterFormCard = () => {
                   required
                 />
               </div>
+
               <div className="grid gap-2">
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
@@ -53,7 +65,7 @@ const RegisterFormCard = () => {
 
                 <div className="flex items-center space-x-2">
                   <Checkbox id="remember" />
-                  <Label htmlFor="remember">Remember me</Label>
+                  <Label htmlFor="remember">Terms and Conditions</Label>
                 </div>
               </div>
             </div>
