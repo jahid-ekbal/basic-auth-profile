@@ -10,7 +10,6 @@ const ToastProvider = () => {
     <ToastContainer
       position="bottom-right"
       autoClose={1500}
-      stacked={true}
       theme={theme === "dark" ? "dark" : "light"}
     />
   );

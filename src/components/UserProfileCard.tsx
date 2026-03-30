@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "./shadcnui/avatar";
 import { Card, CardContent, CardHeader } from "./shadcnui/card";
 
-const UserProfile = () => {
+const UserProfileCard = () => {
   return (
     <Card className="w-sm rounded-3xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur-xl backdrop-saturate-150 dark:bg-black/20">
       <CardHeader className="flex flex-col items-center space-y-4 pt-8">
@@ -24,4 +24,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default UserProfileCard;
