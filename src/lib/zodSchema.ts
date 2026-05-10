@@ -6,7 +6,7 @@ export const loginFormSchema = z.object({
     .endsWith("@gmail.com", "Only gmail is allowed"),
   loginPassword: z
     .string()
-    .min(6, "Password should be more than 6 char. long")
+    .min(8, "Password should be more than 8 char. long")
     .max(32, "Password should be less than 32 char. long"),
   loginRememberMe: z.boolean("This field is required"),
 });
@@ -24,11 +24,11 @@ export const registerFormSchema = z
       .endsWith("@gmail.com", "Only gmail is allowed"),
     registerPassword: z
       .string()
-      .min(6, "Password should be more than 6 char. long")
+      .min(8, "Password should be more than 8 char. long")
       .max(32, "Password should be less than 32 char. long"),
     registerConfirmPassword: z
       .string()
-      .min(6, "Password should be more than 6 char. long")
+      .min(8, "Password should be more than 8 char. long")
       .max(32, "Password should be less than 32 char. long"),
   })
   .refine(
