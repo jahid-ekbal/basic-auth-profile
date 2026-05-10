@@ -17,6 +17,14 @@ const page = async () => {
     },
   });
 
+  if (allUsers.length === 0) {
+    return (
+      <section className="grid h-dvh place-items-center">
+        <div className="text-4xl">No Users Found ☹️</div>
+      </section>
+    );
+  }
+
   return (
     <section className="grid grid-cols-3 place-items-center gap-4 pt-22 pb-3">
       {allUsers.map((item) => (

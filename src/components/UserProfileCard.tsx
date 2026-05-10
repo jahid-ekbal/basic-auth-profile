@@ -1,6 +1,9 @@
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import { UserGetPayload } from "../../generated/prisma/models";
+import DeleteUserButton from "./Buttons/DeleteUserButton";
 import { Avatar, AvatarFallback, AvatarImage } from "./shadcnui/avatar";
-import { Card, CardContent, CardHeader } from "./shadcnui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "./shadcnui/card";
 
 type UserProfileCardProps = {
   info: UserGetPayload<{
@@ -13,7 +16,11 @@ type UserProfileCardProps = {
   }>;
 };
 
-const UserProfileCard = ({ info }: UserProfileCardProps) => {
+const UserProfileCard = async ({ info }: UserProfileCardProps) => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
   const nameArray = info.name.split(" ").map((i) => i.charAt(0));
 
   const placeHolderName = nameArray.join("");
@@ -36,6 +43,12 @@ const UserProfileCard = ({ info }: UserProfileCardProps) => {
         <div className="font-medium">{info.name}</div>
         <div className="text-sm">{info.email}</div>
       </CardContent>
+
+      {info.id === session?.user.id && (
+        <CardFooter className="justify-center">
+          <DeleteUserButton />
+        </CardFooter>
+      )}
     </Card>
   );
 };
