@@ -38,10 +38,10 @@ const DeleteUserButton = () => {
       disabled={loading}>
       {loading ?
         <>
-          <LoaderIcon className="animate-spin" /> Deleting Account..
+          <LoaderIcon className="animate-spin" /> Deleting..
         </>
       : <>
-          <Trash2Icon /> Delete Account
+          <Trash2Icon /> Delete
         </>
       }
     </Button>

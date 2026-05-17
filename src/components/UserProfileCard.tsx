@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { UserGetPayload } from "../../generated/prisma/models";
 import DeleteUserButton from "./Buttons/DeleteUserButton";
 import { Avatar, AvatarFallback, AvatarImage } from "./shadcnui/avatar";
-import { Card, CardContent, CardFooter, CardHeader } from "./shadcnui/card";
+import { Card, CardContent, CardHeader } from "./shadcnui/card";
 
 type UserProfileCardProps = {
   info: UserGetPayload<{
@@ -26,8 +26,8 @@ const UserProfileCard = async ({ info }: UserProfileCardProps) => {
   const placeHolderName = nameArray.join("");
 
   return (
-    <Card className="w-sm rounded-3xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur-xl backdrop-saturate-150 dark:bg-black/20">
-      <CardHeader className="flex flex-col items-center space-y-4 pt-8">
+    <Card className="relative w-sm rounded-3xl border border-white/20 bg-white/10 py-8 shadow-2xl backdrop-blur-xl backdrop-saturate-150 dark:bg-black/20">
+      <CardHeader className="flex flex-col items-center space-y-4">
         <Avatar className="col-span-1 size-24">
           <AvatarImage
             src={`/${info.image}`}
@@ -45,9 +45,9 @@ const UserProfileCard = async ({ info }: UserProfileCardProps) => {
       </CardContent>
 
       {info.id === session?.user.id && (
-        <CardFooter className="justify-center">
+        <div className="absolute top-4 right-4 justify-center">
           <DeleteUserButton />
-        </CardFooter>
+        </div>
       )}
     </Card>
   );
