@@ -41,3 +41,12 @@ export const registerFormSchema = z
   );
 
 export type RegisterFormType = z.infer<typeof registerFormSchema>;
+
+export const updateNameFormSchema = z.object({
+  name: z
+    .string()
+    .min(6, "Name should be more than 6 char. long")
+    .max(32, "Name should be less than 32 char. long"),
+});
+
+export type UpdateNameFormType = z.infer<typeof updateNameFormSchema>;

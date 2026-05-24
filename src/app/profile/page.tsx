@@ -35,7 +35,7 @@ const page = async () => {
           <CardTitle className="text-center text-2xl">Change Name</CardTitle>
         </CardHeader>
 
-        <UpdateNameForm />
+        <UpdateNameForm prevName={session.user.name} />
       </Card>
     </section>
   );

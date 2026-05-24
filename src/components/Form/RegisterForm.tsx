@@ -136,7 +136,7 @@ const RegisterForm = () => {
         disabled={isSubmitting}>
         {isSubmitting ?
           <>
-            <LoaderIcon /> Registering...
+            <LoaderIcon className="animate-spin" /> Registering...
           </>
         : <>
             <LockIcon /> Register
